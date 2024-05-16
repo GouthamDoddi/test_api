@@ -1,19 +1,11 @@
 import mongodb from 'mongodb';
-import dotenv  from "dotenv"
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
 
 
 const { MongoClient, Db } = mongodb;
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: __dirname+'././.env' });
-
 
 //db init
-const url = process.env.db
-
-console.log(url);
+const url = `mongodb+srv://goutham:Price121212@cluster0.ipdqc.mongodb.net/`
 
 const connect = async () => {
     const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
